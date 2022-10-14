@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
         Handler handler = new Handler(Looper.getMainLooper());
 
         Button botoEnviar=findViewById(R.id.botoEnviar);
-        TextView vistaResultat=findViewById(R.id.textView);
+        TextView vistaResultat=findViewById(R.id.resultatVista);
         botoEnviar.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 Log.i("INFO", "S'ha apretat el boto d'enviar");
@@ -44,12 +44,12 @@ public class MainActivity extends AppCompatActivity {
 
                 executor.execute(new Runnable() {
                     public void run() {
-                        handler.post(new Runnable() {
-                            public void run() {
+                        //handler.post(new Runnable() {
+                            //public void run() {
                                 String dadesURL=getDataFromUrl("https://ieti.cat");
                                 vistaResultat.setText(dadesURL);
-                            }
-                        });
+                            //}
+                        //});
                     }
                 });
             }
