@@ -44,12 +44,12 @@ public class MainActivity extends AppCompatActivity {
 
                 executor.execute(new Runnable() {
                     public void run() {
-                        //handler.post(new Runnable() {
-                            //public void run() {
-                                String dadesURL=getDataFromUrl("https://ieti.cat");
+                        String dadesURL=getDataFromUrl("https://ieti.cat");
+                        handler.post(new Runnable() {
+                            public void run() {
                                 vistaResultat.setText(dadesURL);
-                            //}
-                        //});
+                            }
+                        });
                     }
                 });
             }
